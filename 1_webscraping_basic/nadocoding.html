@@ -1,0 +1,72 @@
+<!DOCTYPE HTML><html lang="ko"><head><meta charset="UTF-8"><title>건국대학교</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="shortcut icon" type="image/x-icon" href="/common/ptfol/css/images/common/favicon.ico" /><link rel="stylesheet" href="/common/plugin/jquery-1.9.1/flick/jquery-ui-1.9.2.custom.css"><link rel="stylesheet" href="/common/plugin/customTags/jquery.customTags.css"><link rel="stylesheet" href="/common/ptfol/css/common.css"><link rel="stylesheet" href="/common/ptfol/css/content.css"><link rel="stylesheet" href="/common/ptfol/css/content_yu.css"><link rel="stylesheet" href="/common/ptfol/css/k_main.css"><script type="text/javascript" charset="utf-8">var global={"queryString":"rtnUrl=8f4d222b9b8edea9acd345835aea594efbe2fd91b58f38dc7634e924e73e51ad","sysdate":"2020.12.22","userId":null,"env":"real","params":{"rtnUrl":"8f4d222b9b8edea9acd345835aea594efbe2fd91b58f38dc7634e924e73e51ad"},"isMobile":false,"mappingUrl":"/common/user/login.do"}</script><script type="text/javascript" src="/common/plugin/jquery-1.9.1/jquery-1.9.1.min.js"></script><script type="text/javascript" src="/common/plugin/jquery-1.9.1/jquery-ui-1.9.2.custom.min.js"></script><script type="text/javascript" src="/common/plugin/jquery.easing.1.3.js"></script><script type="text/javascript" src="/common/plugin/customTags/jquery.customTags.js"></script><script type="text/javascript" src="/common/plugin/jquery.nicescroll.min.js"></script><script type="text/javascript" src="/common/ptfol/js/common.js"></script><script type="text/javascript" src="/common/plugin/syworks.jquery.fn.js"></script><!--[if lt IE 9]><script src="../js/html5.js"></script><script src="../js/respond.min.js"></script><![endif]--><script type="text/javascript">
+	//로그인페이지 레이아웃
+	$( document ).ready( function () {
+		$( document ).customTags();
+		mainPageLayout();
+	} );
+	$( window ).resize( mainPageLayout );
+	function mainPageLayout () {
+		var tar = $( '.login_w' );
+		tar.css( {
+			'height' : $( window ).height() - $( '.login_w .login_footer .box' ).outerHeight() - $( '.login_w .login_header' ).outerHeight()
+		} );
+	}
+</script></head><body><script type="text/javascript" src="/common/ptfol/js/jquery.bxslider.min.js"></script><script type="text/javascript">
+	$( document ).ready( function () {
+		var $loginFrm = $( "#loginForm" );
+		var $coMoacLoginFrm = $( "#coMoacLoginFrm" );
+		$( "#loginBtn" ).click( function ( e ) {
+			e.preventDefault();
+			if ( !$loginFrm.validate() ) return;
+			$loginFrm.get( 0 ).submit();
+		} );
+		$( "#coMoacLoginBtn" ).click( function ( e ) {
+			e.preventDefault();
+			if ( !$coMoacLoginFrm.validate() ) return;
+			$coMoacLoginFrm.get( 0 ).submit();
+		} );
+		$( "#seledtUserIdList a" ).click( function ( e ) {
+			e.preventDefault();
+			var params = $( this ).data( "params" );
+			$.submit( "./selectLogin.do" ,params );
+		} );
+		( function () {
+			$( "#coMoacBtn" ).click( function ( e ) {
+				e.preventDefault();
+				$.location( "/common/moacInfoCo/findMoacInfoCoBasForm.do" );
+			} );
+		} )();
+		( function () {
+			$( "#parentMoacBtn" ).click( function ( e ) {
+				e.preventDefault();
+				$.location( "/common/moacInfoParent/findMoacInfoParentBasForm.do" );
+			} );
+		} )();
+		( function () {
+			$( "#pwdQryBtn" ).click( function ( e ) {
+				e.preventDefault();
+				$.location( "/common/moacPwdQry/findMoacPwdQryBasForm.do" )
+			} );
+		} )();
+		( function () {
+			/* $( '#loginSlide ul' ).bxSlider( {
+				slideWidth : 815 ,
+				auto : true ,
+				speed : 1000 ,
+				minSlides : 1 ,
+				maxSlides : 1 ,
+				autoHover : true ,
+				infiniteLoop : true ,
+				hideControlOnEnd : true ,
+				moveSlides : 1 ,
+				onSlideBefore : function ( $slideElement ,oldIndex ,newIndex ) {
+					$( '.bx-controls' ).addClass( "disabled" );
+				} ,
+				onSlideAfter : function ( $slideElement ,oldIndex ,newIndex ) {
+					$( '.bx-controls' ).removeClass( "disabled" );
+				}
+			} ); */
+			$( ".login_w2" ).parents( 'html' ).addClass( 'login_bg2' );
+		} )();
+	} );
+</script><div class="login_w2"><div class="login_slide"><div id="loginSlide"><ul><li><!-- <div class="slide_box"><img src="/common/ptfol/css/images/main/login_banner_v3.jpg" alt="로그인슬라이드"></div> --><div class="slide_box" style="width:815px;height:740px; background: url('/common/cmnFile/thumbnail.do?encSvrFileNm=6c99b12d2e5466de92cbc16262dcd90888dd619b91a7e2fd16898271e286f5e103c00bcbaa07f5748e3eae756d04b4f008bcbf1f21fd5546be2f2b6c64d4f803&width=815&height=740') no-repeat center center;background-size:cover;"></div></li></ul><div class="login_footer2"><p>서울시 광진구 능동로 120 건국대학교 상허기념도서관 604호 위인교육센터 TEL. 02-450-4210</p><p>COPYRIGHT 2017 KONKUK UNIVERSITY. ALL RIGHTS RESERVED.</p></div></div></div><div class="login2_right"><div class="box_style"><ul class="tabmenu tabMotion"><li><a href="#tablog1">학생/교직원</a></li><li><a href="#tablog2">기업</a></li></ul><div id="tablog1" class="tab_cont"><div class="log_box01"><p class="text02">위인전 시스템 로그인</p><form name="loginForm" id="loginForm" method="post" action="/common/user/loginProc.do" autocomplete="off"><input type="hidden" name="rtnUrl" value="8f4d222b9b8edea9acd345835aea594efbe2fd91b58f38dc7634e924e73e51ad" /><div class="login_form2"><input type="text" name="userId" class="{'required' : true , 'maxlength' : 20} input_id" title="아이디" placeholder="아이디를 입력해주세요." value="" /><input type="password" name="pw" class="{'required' : true , 'maxlength' : 50} input_pw" title="비밀번호" placeholder="비밀번호를 입력해주세요." value="" /><a href="#" class="btn_login" id="loginBtn"><span>로그인</span></a><!-- 회원가입 노출 --><!-- <ul class="member"><li><a href="#" id="coMoacBtn">기업회원가입</a></li><li><a href="#" id="parentMoacBtn">학부모회원가입</a></li><li><a href="#" id="pwdQryBtn">아이디/비밀번호 찾기</a></li></ul> --></div></form></div></div><div id="tablog2" class="tab_cont"><div class="log_box01"><p class="text02">위인전 시스템 로그인</p><div class="login_form2"><form name="coMoacLoginFrm" id="coMoacLoginFrm" method="post" action="/common/user/coMoacLoginProc.do" autocomplete="off"><input type="text" name="userId" class="{'required' : true , 'maxlength' : 20} input_id" title="아이디를 입력해주세요." placeholder="아이디를 입력해주세요." /><input type="password" name="pw" class="{'required' : true , 'maxlength' : 50} input_pw" title="비밀번호를 입력해주세요." placeholder="비밀번호를 입력해주세요." /><a href="#" class="btn_login" id="coMoacLoginBtn"><span>로그인</span></a><ul class="member"><!-- 									<li> --><!-- 										<a href="/ptfol/career/join/findAgreeList.do">회원가입</a> --><!-- 									</li> --><!-- <li><a href="#">아이디/비밀번호 찾기</a></li> --></ul></form></div></div></div></div><div class="login_r_b_box"><p class="text01"><a href="#">서비스 이용안내</a></p><ul class="text02"><li><a href="/common/user/cuslManualDownload.do?cmnFileNm=studManual"><span>사용자 메뉴얼</span></a></li><li><a href="/common/user/cuslManualDownload.do?cmnFileNm=profManual"><span>교수상담 메뉴얼</span></a></li></ul><ul class="text03"><li><a href="http://ecampus.konkuk.ac.kr/" target="_blank">E - Campus</a></li><li><a href="https://www.konkuk.ac.kr/" target="_blank">건국대학교</a></li><li><a href="http://ctl.konkuk.ac.kr/ctl/main/main_form.acl" target="_blank">CTL</a></li><li><a href="https://library.konkuk.ac.kr/" target="_blank">상허기념 도서관</a></li></ul></div></div></div></body>
