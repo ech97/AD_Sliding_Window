@@ -16,7 +16,7 @@ time.sleep(random.uniform(1,3))
 
 #elem에 저장해서 두고두고 클릭하거나 키입력 등 후처리를 하지않을거니깐 걍 바로 뒤에 send_key 붙이기
 browser.find_element_by_id("id").send_keys("ech97")
-browser.find_element_by_id("pw").send_keys(".9152airplane")
+browser.find_element_by_id("pw").send_keys("")
 browser.find_element_by_id("log.login").click()
 #browser.find_element_by_id("pw").submit() 으로 클릭 대체가능
 
